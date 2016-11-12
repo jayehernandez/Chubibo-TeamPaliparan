@@ -24,7 +24,13 @@
   .column {
     max-width: 2000px;
   }
-  h2 {
+  h1 {
+    color: #6d0d1b;
+  }
+  .header {
+    color: #6d0d1b;
+  }
+    h2 {
     color: #6d0d1b;
   }
   h3 {
@@ -35,38 +41,6 @@
   }
 </style>
 
-<script>
-  $(document)
-    .ready(function() {
-      $('.ui.form')
-        .form({
-          fields: {
-            email: {
-              identifier  : 'email',
-              rules: [
-                {
-                  type   : 'empty',
-                  prompt : 'Please enter your e-mail'
-                },
-                {
-                  type   : 'email',
-                  prompt : 'Please enter a valid e-mail'
-                }
-              ]
-            },
-          }
-        })
-      ;
-    })
-  ;
-  </script>
- <script type="text/javascript">
-$(document).ready(function(){
-     $('#sbutton').click(function(){
-        $('#submit').modal('show');    
-     });
-});
-  </script>
 </head>
 
 <body>
@@ -74,7 +48,7 @@ $(document).ready(function(){
   <div class="ui two column grid">
     <!--LOGIN PART-->
     <div class="four wide left aligned column">
-    {% load static %}
+         {% load static %}
     <center><a href="{% url 'hello' %}"><img src="{% static 'images/chubibth.png' %}" width="270px"/></a>
     <div class="ui cards">
 
@@ -92,7 +66,7 @@ $(document).ready(function(){
           </div>
         </div>
       </div>
-        <div class="card">
+       <div class="card">
         <div class="ui vertical buttons">
         <a href="{% url 'submit' %}"><button class="ui button" id="sbutton"> <i class="hourglass half icon"></i>Submit a permit </button></a>
         <a href="{% url 'guests' %}"><button class="ui button"> <i class="users icon"></i>Form for visitors</button></a>
@@ -103,63 +77,51 @@ $(document).ready(function(){
     </div>
     <!--Announcements-->    
     <div class="nine wide left aligned column">
-    <div class="ui huge form">
-    <div class="field">
-    <label for="snum"><h2>Student Number</h2></label>
-    <div class="ui left icon input"> <i class="user icon"></i>
-    <input type="text" id="snum" placeholder="2014-12345"/>
-    <div class="ui huge button" onclick="getLocations('Main');">Enter</div>
+    <form class="ui form">
+    <h1 class="ui dividing header" style="color:#6d0d1b;">Form for Permits</h1>
+ <div class="field">
+    <label>Name & Room No.</label>
+    <div class="two fields">
+      <div class="field">
+        <input name="name" placeholder="Full Name" type="text">
+      </div>
+      <div class="field">
+        <input name="roomno" placeholder="Room No." type="text">
+      </div>
     </div>
     </div>
-    </div>
-    <br>
-    <table class="ui very basic table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Time</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><b>SIMON, Paola Faith T.</b></td>
-        <td>10:00 AM</td>
-        <td><i class="green circle icon"></i></td>
-      </tr>
-      <tr>
-        <td><b>HERNANDEZ, Jaye Marlice S.</b></td>
-        <td>9:00 AM</td>
-        <td><i class="red circle icon"></i></td>
-      </tr>
-      <tr>
-        <td><b>CO, Clarence David I.</b></td>
-        <td>8:43 AM</td>
-        <td><i class="green circle icon"></i></td>
-      </tr>
-            <tr>
-        <td><b>SIMON, Paola Faith T.</b></td>
-        <td>10:00 AM</td>
-        <td><i class="green circle icon"></i></td>
-      </tr>
-      <tr>
-        <td><b>HERNANDEZ, Jaye Marlice S.</b></td>
-        <td>9:00 AM</td>
-        <td><i class="red circle icon"></i></td>
-      </tr>
-      <tr>
-        <td><b>CO, Clarence David I.</b></td>
-        <td>8:43 AM</td>
-        <td><i class="green circle icon"></i></td>
-      </tr>
-      <tr>
-        <td><b>CO, Clarence David I.</b></td>
-        <td>8:43 AM</td>
-        <td><i class="green circle icon"></i></td>
-      </tr>
-    </tbody>
-  </table>
 
+    <div class="field">
+      <label>Permit Type</label>
+      <select class="ui fluid dropdown">
+        <option value="o">Overnight</option>
+        <option value="m">Early morning</option>
+      <option value="n">Late night</option>  
+    </select>
+    </div>
+
+    <label>Reason</label>
+     <div class="field">
+        <input name="name" placeholder="Reason" type="text">
+      </div>
+
+     <div class="field">
+    <label>Date and Day of Return</label>
+    <div class="two fields">
+      <div class="field">
+        <input name="name" placeholder="Date" type="text">
+      </div>
+      <div class="field">
+        <input name="studentno" placeholder="Day" type="text">
+      </div><div class="teal ui large button" onclick="getLocations('Main');">Enter</div>
+    </div>
+
+    </div>
+
+  </div>
+</form>
+
+  </div>
     </div> <!--nine wide-->
   </div>
 </div>

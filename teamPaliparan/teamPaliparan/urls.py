@@ -19,5 +19,10 @@ from teamPaliparan import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^hello/$', views.hello),
+    url(r'^hello/$', views.hello, name='hello'),
+    url(r'^login/$', views.login, name='login'),
+    url(r'^adminpage/$', views.adminpage, name='adminpage'),
+    url(r'^submit/$', views.submit, name='submit'),
+    url(r'^guests/$', views.guests, name='guests'),
+    url(r'^logo/$', views.logo, name='logo'),
 ]

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script></head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- Standard Meta -->
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+<!-- Site Properties -->
+<title>Login Example - Semantic</title>
+
+<style type="text/css">
+  body {
+    background-color: #f9f9f9;
+  }
+  body > .grid {
+    height: 100%;
+  }
+  .image {
+    margin-top: -100px;
+  }
+  .column {
+    max-width: 2000px;
+  }
+  h2 {
+    color: #6d0d1b;
+  }
+  .header {
+    color: #6d0d1b;
+  }
+  .ui-header {
+    color: #09331c;
+  }
+  h3 {
+    color: #0b512c;
+  }
+</style>
+
+<script>
+  $(document)
+    .ready(function() {
+      $('.ui.form')
+        .form({
+          fields: {
+            email: {
+              identifier  : 'email',
+              rules: [
+                {
+                  type   : 'empty',
+                  prompt : 'Please enter your e-mail'
+                },
+                {
+                  type   : 'email',
+                  prompt : 'Please enter a valid e-mail'
+                }
+              ]
+            },
+          }
+        })
+      ;
+    })
+  ;
+  </script>
+ <script type="text/javascript">
+$(document).ready(function(){
+     $('#sbutton').click(function(){
+        $('#submit').modal('show');    
+     });
+});
+  </script>
+</head>
+
+<body>
+<div class="ui middle aligned center aligned grid">
+  <div class="ui two column grid">
+    <!--LOGIN PART-->
+    <div class="four wide left aligned column">
+     {% load static %}
+    <center><a href="{% url 'hello' %}"><img src="{% static 'images/chubibth.png' %}" width="270px"/></a>
+
+    <div class="ui cards">
+
+      <div class="card">
+        <div class="content">
+          <div class="header" style="color:#0b512c;">October 29: General Assembly</div>
+          <div class="description">
+            This month's GA will be focused on waste management. A talk by Engr. July Yap would start the assembly. 
+          </div>
+        </div>
+        <div class="content">
+          <div class="header" style="color:#0b512c;">November 7: Dorm Fees</div>
+          <div class="description">
+            Please settle all your accountancies before the said date to avoid any inconvenience.
+          </div>
+        </div>
+      <button class="ui button" id="sbutton"> <i class="add circle icon"></i>Add an announcement</button>
+        <button class="ui button"> <i class="text cursor icon"></i>Edit announcements</button>
+        <button class="ui button"> <i class="remove circle icon"></i>Delete an announcement</button>
+      </div>
+        <div class="card">
+        <div class="ui vertical buttons">
+        <button class="ui button" id="sbutton"> <i class="table circle icon"></i>Activity Log </button>
+        <button class="ui button"> <i class="users icon"></i>Guest Log</button>
+        <button class="ui button"> <i class="print icon"></i>Print Logs</button>
+      </div>
+      </div>
+
+    </div>
+    </div>
+    <!--Announcements-->    
+    <div class="nine wide left aligned column">
+    <h2>Welcome, ptsimon!</h2>
+    <div class="ui divider" style="padding-bottom:20px;"></div>
+    <div class="ui two column grid">
+      <div class="eight wide left aligned column">
+      <h3>
+        <div class="content">
+       <i class="student icon"></i>
+          Monitoring System
+        </div>
+      </h3>
+      <table class="ui very basic table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Room No.</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Jaye Hernandez</td>
+      <td>234</td>
+      <td><i class="green circle icon"></i></td>
+    </tr>
+    <tr>
+      <td>Paola Simon</td>
+      <td>234</td>
+      <td><i class="red circle icon"></i></td>
+    </tr>
+     <tr>
+      <td>Jaye Hernandez</td>
+      <td>234</td>
+      <td><i class="green circle icon"></i></td>
+    </tr>
+    <tr>
+      <td>Paola Simon</td>
+      <td>234</td>
+      <td><i class="red circle icon"></i></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+      </div>
+
+      <div class="eight wide left aligned column">
+        <h3>
+        <div class="content">
+       <i class="write icon"></i>
+          Approval of Permits
+        </div>
+      </h3>
+       <table class="ui very basic table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Room No.</th>
+      <th>Decision</th>
+    </tr>
+        </thead>
+  <tbody>
+  <tr>
+      <td><a href="">Jaye Hernandez</a></td>
+      <td>124</td>
+      <td><div class="ui buttons">
+  <button class="ui green button"></button>
+  <div class="or"></div>
+  <button class="ui red button"></button>
+</div></td>
+    </tr>
+ <tr>
+      <td><a href="">Clarence Co</a></td>
+      <td>434</td>
+      <td><div class="ui buttons">
+  <button class="ui green button"></button>
+  <div class="or"></div>
+  <button class="ui red button"></button>
+</div></td>
+    </tr>
+ <tr>
+      <td><a href="">Francis Galang</a></td>
+      <td>553</td>
+      <td><div class="ui buttons">
+  <button class="ui green button"></button>
+  <div class="or"></div>
+  <button class="ui red button"></button>
+</div></td>
+    </tr>
+    <tr>
+      <td><a href="">Paola Simon</a></td>
+      <td>234</td>
+      <td><div class="ui buttons">
+  <button class="ui green button"></button>
+  <div class="or"></div>
+  <button class="ui red button"></button>
+</div></td>
+    </tr>
+  </tbody>
+</table>  
+
+      </div>
+    </div>
+    </div> <!--nine wide-->
+  </div>
+</div>
+</div>
+
+</body>
+
+</html>

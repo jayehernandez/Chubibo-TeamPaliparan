@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script></head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- Standard Meta -->
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+<!-- Site Properties -->
+<title>Login Example - Semantic</title>
+
+<style type="text/css">
+  body {
+    background-color: #f9f9f9;
+  }
+  body > .grid {
+    height: 100%;
+  }
+  .image {
+    margin-top: -100px;
+  }
+  .column {
+    max-width: 2000px;
+  }
+  h1 {
+    color: #6d0d1b;
+  }
+  .header {
+    color: #6d0d1b;
+  }
+   h2 {
+    color: #6d0d1b;
+  }
+  h3 {
+    color: #0b512c;
+  }
+  b {
+    color: #0b512c;
+  }
+</style>
+
+</head>
+
+<body>
+<div class="ui middle aligned center aligned grid">
+  <div class="ui two column grid">
+    <!--LOGIN PART-->
+    <div class="four wide left aligned column">
+        {% load static %}
+    <center><a href="{% url 'hello' %}"><img src="{% static 'images/chubibth.png' %}" width="270px"/></a>
+    <div class="ui cards">
+
+      <div class="card">
+        <div class="content">
+          <h3>October 29: General Assembly</h3>
+          <div class="description">
+            This month's GA will be focused on waste management. A talk by Engr. July Yap would start the assembly. 
+          </div>
+        </div>
+        <div class="content">
+          <h3>November 7: Dorm Fees</h3>
+          <div class="description">
+            Please settle all your accountancies before the said date to avoid any inconvenience.
+          </div>
+        </div>
+      </div>
+       <div class="card">
+        <div class="ui vertical buttons">
+        <a href="{% url 'submit' %}"><button class="ui button" id="sbutton"> <i class="hourglass half icon"></i>Submit a permit </button></a>
+        <a href="{% url 'guests' %}"><button class="ui button"> <i class="users icon"></i>Form for visitors</button></a>
+      </div>
+      </div>
+
+    </div>
+    </div>
+    <!--Announcements-->    
+    <div class="nine wide left aligned column">
+    <form class="ui form">
+    <h1 class="ui dividing header" style="color:#6d0d1b;">Form for Visitors</h1>
+ <div class="field">
+    <label>Name & Resident Visiting</label>
+    <div class="two fields">
+      <div class="field">
+        <input name="name" placeholder="Name" type="text">
+      </div>
+      <div class="field">
+        <input name="roomno" placeholder="Resident Visiting" type="text">
+      </div>
+    </div>
+    </div>
+
+      <div class="field">
+    <label>Reason</label>
+    <input type="text" placeholder="Reason for Visiting"/>
+    </div>
+    <div class="ui teal large button" onclick="getLocations('Main');">Enter</div>
+    </div>
+
+    </div>
+    </div>
+
+  </div>
+</form>
+
+  </div>
+    </div> <!--nine wide-->
+  </div>
+</div>
+</div>
+
+</body>
+
+</html>
